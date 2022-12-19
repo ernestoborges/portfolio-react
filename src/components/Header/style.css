@@ -22,7 +22,7 @@
 
 .header-box nav li {
     width: 18rem;
-    height: 4rem;
+    height: 4.6rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -54,4 +54,13 @@
 .notification-area > div > img {
     width: 3rem;
     height: 3rem;
+}
+.notification-area .date-time {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.notification-area .time {
+    display: flex;
+    justify-content: space-between;
 }

@@ -34,3 +34,7 @@ body {
     font-family: "DOA-8Bit-Mage";
     background-color: var(--purple-200)
 }
+
+.transparent {
+    color: transparent
+}

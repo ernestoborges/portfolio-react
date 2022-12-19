@@ -1,4 +1,5 @@
 import "./style.css";
+import { DateTime } from "./DateTime";
 export function Taskbar(){
     const taskbarButtons = ["home", "about", "projects", "contact"]
     return <header>
@@ -17,19 +18,11 @@ export function Taskbar(){
             <div className="notification-area">
                 <div>
                     <img src="/images/taskbar-icons/volume.png" alt="" />
-                    
                 </div>
                 <div>
                     EN
                 </div>
-                <div className="date-time">
-                    <div className="time">
-                        mon 10:10am
-                    </div>
-                    <div className="date">
-                        01/01/2021
-                    </div>
-                </div>
+                <DateTime />
             </div>
         </div>
     </header>
