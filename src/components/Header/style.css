@@ -1,0 +1,57 @@
+.App > header {
+}
+
+.header-box {
+    background-color: var(--purple-400);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.header-box > * {
+    display: flex;
+    align-items: center;
+}
+
+.header-box nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-box nav li {
+    width: 18rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0 1rem;
+    background-color: var(--purple-300);
+    border: 0.2rem solid var(--purple-400);
+    margin: 0.2rem;
+}
+.header-box nav li:hover {
+    cursor: pointer;
+    border: 0.2rem solid var(--white);
+}
+
+.header-box nav li img {
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+.header-box nav li p {
+    margin: 0.4rem 0 0 0;
+    text-transform: capitalize;
+}
+
+.notification-area {
+    gap: 2rem;
+}
+
+.notification-area > div > img {
+    width: 3rem;
+    height: 3rem;
+}

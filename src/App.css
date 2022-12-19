@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "DOA-8Bit-Mage";
+    src: url("./fonts/DiaryOfAn8BitMage-lYDD.ttf") format("truetype");
+}
+
+
+:root {
+    font-size: 10px;
+    /* colors */
+    --purple-400: #2c1b2d;
+    --purple-300: #362238;
+    --purple-200: #574b66;
+    --purple-100: #9379c1;
+    --salmon: #d2c0aa;
+    --black: #0e0e0e;
+    --white: #f9f4eb;
+    --red: #ec4259;
+    --green: #8de26a;
+    --blue: #49c1f6;
+    --yellow: #f5dc64;
+    --orange: #c37550;
+    --cyan: #2b8a90;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    font-family: "DOA-8Bit-Mage";
+    background-color: var(--purple-200)
+}
