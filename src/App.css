@@ -26,6 +26,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-weight: 500;
 }
 
 html {
@@ -53,8 +54,8 @@ body {
 }
 
 .transparent {
-    color: transparent
+    color: transparent !important;
 }
 .hidden {
-    display: none
+    display: none !important;
 }

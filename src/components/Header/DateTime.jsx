@@ -14,7 +14,6 @@ export function DateTime(){
 
     function tick() {
         setTimer(new Date());
-        console.log(timer);
     }
 
     function stringfyDigits(digits){
@@ -34,7 +33,7 @@ export function DateTime(){
         </div>
     </div>
     <div className="date">
-       {`${stringfyDigits(timer.getDate())}/${stringfyDigits(timer.getMonth())}/${timer.getFullYear()}`}
+       {`${stringfyDigits(timer.getDate())}/${stringfyDigits(timer.getMonth()+1)}/${timer.getFullYear()}`}
     </div>
 </div>
 }
