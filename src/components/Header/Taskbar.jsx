@@ -1,4 +1,4 @@
-import "./style.css";
+import "./styles.css";
 import { DateTime } from "./DateTime";
 export function Taskbar(){
     const taskbarButtons = ["home", "about", "projects", "contact"]
