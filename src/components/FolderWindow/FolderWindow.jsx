@@ -13,7 +13,13 @@ export function FolderWindow({className, folderState, setFolderState}){
         <div className="folder-window-box">
             <header>
                 <div className="title">
-                    <h2>{`/desktop/${folder?.name}`}</h2>
+                    <h2>
+                        <div className="title-icon">
+                          <div></div>
+                          <div></div>
+                        </div>
+                        {`/desktop/${folder?.name}`}
+                    </h2>
                     <div className="button-container">
                         <button>-</button>
                         <button onClick={()=>{setFolderState("closed")}}>X</button>
