@@ -1,4 +1,5 @@
 import "./styles.css"
+import { FolderWindow } from "../FolderWindow/FolderWindow"
 
 export function Desktop(){
     return <main>
@@ -20,5 +21,7 @@ export function Desktop(){
             </div>
             <p>Contact</p>
         </div>
+        <FolderWindow className="" />
+
     </main>
 }

@@ -28,13 +28,33 @@
     box-sizing: border-box;
 }
 
+html {
+    display: flex;
+    justify-content: center;
+}
+
 body {
+    max-width: 1920px;
     font-size: 1.6rem;
     letter-spacing: 0.2rem;
     font-family: "DOA-8Bit-Mage";
+    background-color: var(--black);
+    width: 100%;
+}
+
+.App{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
     background-color: var(--purple-200);
+    height: 100vh;
 }
 
 .transparent {
     color: transparent
+}
+.hidden {
+    display: none
 }
