@@ -1,13 +1,44 @@
 import "./styles.css"
 import { foldersData } from "../../db/foldersData"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import OpenedFilesContext from "../../context/OpenedFilesProvider";
+
 export function FolderWindow({className, folderState, setFolderState}){
 
     const [folder, setFolder] = useState();
+    const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext)
+    // const setOpenedFiles = useContext(OpenedFilesContext).setOpenedFiles
 
     useEffect(()=>{
         setFolder(foldersData.filter(item => item.name === folderState)[0])
     }, [folderState])
+
+    function handleFileClick(file){
+        switch(file.type){
+            case "folder":
+                setFolderState(`${folder?.name}/${file.name}`)
+                break;
+            case "file":
+                if(openedFiles.filter(e => e.name === file.name.split(".")[0]).length === 0){
+                    setOpenedFiles((prev)=> [
+                        ...prev,
+                        {
+                            name: file.name.split(".")[0],
+                            minimized: false,
+                            index: prev.length > 0 ? prev[prev.length-1].index + 1 : 0 
+                        } 
+                    ])
+                }
+                console.log("file")
+                break;
+            case "link":
+                window.open(file.link)
+                console.log("link")
+                break;
+            default:
+                break;
+        }
+    }
 
     return (
         <article className={`folder-window ${className}`}>
@@ -44,11 +75,7 @@ export function FolderWindow({className, folderState, setFolderState}){
                             folder?.files.map((file, index) => (
                                 <li  
                                     key={index}
-                                    onClick = {
-                                        file.type === "folder"
-                                        ? ()=>{setFolderState(`${folder?.name}/${file.name}`)}
-                                        : console.log(file.type)
-                                    }
+                                    onClick = { () => handleFileClick(file) }
                                 >
                                     <div className="icon-container">
                                         <img src={`images/desktop-icons/${file.icon}.png`} alt="" />

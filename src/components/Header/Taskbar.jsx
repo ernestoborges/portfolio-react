@@ -1,16 +1,18 @@
 import "./styles.css";
 import { DateTime } from "./DateTime";
+import { useContext } from "react";
+import OpenedFilesContext from "../../context/OpenedFilesProvider";
 export function Taskbar(){
-    const taskbarButtons = ["home", "about", "projects", "contact"]
+    const openedFiles = useContext(OpenedFilesContext).openedFiles
     return <header>
         <div className="header-box">
             <div>Logo</div>
             <nav className="navbar">
                 <ul>
-                    {taskbarButtons.map(button => 
-                        <li>
-                            <img src={`/images/taskbar-icons/${button}.png`} alt="" />
-                            <p>{button}</p>
+                    {openedFiles.map((file, i) => 
+                        <li key={i}>
+                            <img src={`/images/taskbar-icons/${file.name}.png`} alt="" />
+                            <p>{file.name}</p>
                         </li>
                     )}
                 </ul>

@@ -21,7 +21,7 @@ export const foldersData = [
             {
                 icon: 'pdf',
                 name: "Curriculum.pdf",
-                type: "file"
+                type: "link"
             },
         ]
     },
@@ -32,12 +32,14 @@ export const foldersData = [
             {
                 icon: 'browser',
                 name: "Index.html",
-                type: "file"
+                type: "link",
+                link: "https://csb-yjyxj5.netlify.app"
             },
             {
                 icon: 'github',
                 name: "Project.github",
-                type: "file"
+                type: "link",
+                link: "https://github.com/ernestoborges/Pokedex"
             },
             {
                 icon: 'dnd5e.png',
@@ -52,12 +54,14 @@ export const foldersData = [
             {
                 icon: 'browser',
                 name: "Index.html",
-                type: "file"
+                type: "link",
+                link: "https://csb-hz0799.netlify.app"
             },
             {
                 icon: 'github',
                 name: "Project.github",
-                type: "file"
+                type: "link",
+                link: "https://github.com/ernestoborges/frontendMentor-12"
             },
             {
                 icon: 'dnd5e.png',
@@ -72,12 +76,14 @@ export const foldersData = [
             {
                 icon: 'browser',
                 name: "Index.html",
-                type: "file"
+                type: "link",
+                link: "https://csb-un44vw.netlify.app"
             },
             {
                 icon: 'github',
                 name: "Project.github",
-                type: "file"
+                type: "link",
+                link: "https://github.com/ernestoborges/dnd5e-encounter-calculator"
             },
             {
                 icon: 'dnd5e.png',
@@ -92,7 +98,7 @@ export const foldersData = [
             {
                 icon: 'browser',
                 name: "Index.html",
-                type: "file"
+                type: "link"
             },
         ]
     },
@@ -128,17 +134,19 @@ export const foldersData = [
             {
                 icon: 'github',
                 name: "Github",
-                type: "file"
+                type: "link",
+                link: "https://github.com/ernestoborges"
             },
             {
                 icon: 'linkedin',
                 name: "Linkedin",
-                type: "file"
+                type: "link",
+                link: "https://www.linkedin.com/in/ernesto-borges-b9a440194/"
             },
             {
                 icon: 'mail',
                 name: "E-mail",
-                type: "file"
+                type: "clip",
             },
         ]
     }
