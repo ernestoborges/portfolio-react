@@ -8,6 +8,7 @@
 }
 
 .header-box {
+    height: 100%;
     background-color: var(--purple-400);
     color: var(--white);
     display: flex;
@@ -21,21 +22,28 @@
     align-items: center;
 }
 
+.header-box nav {
+    flex-grow: 1;
+}
+
 .header-box nav ul {
     display: flex;
     list-style: none;
+    justify-content: center;
+    width: 100%;
 }
 
 .header-box nav li {
-    width: 18rem;
+    max-width: 20rem;
+    flex-grow: 1;
     height: 4.6rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
+    justify-content: space-between;
     padding: 0 1rem;
     background-color: var(--purple-300);
     border: 0.2rem solid var(--purple-400);
+    border-radius: 0.4rem;
     margin: 0.2rem;
 }
 .header-box nav li:hover {
@@ -46,11 +54,33 @@
 .header-box nav li img {
     width: 3.2rem;
     height: 3.2rem;
+    margin-right: 0.6rem;
 }
 
-.header-box nav li p {
+.header-box nav li .filename-container {
+    width: 100%;
     margin: 0.4rem 0 0 0;
+    overflow: hidden;
+}
+
+.header-box nav li .filename-container > div {
+    white-space: nowrap;
     text-transform: capitalize;
+}
+
+.header-box nav li button{
+    font-family: "DOA-8Bit-Mage";
+    font-size: 1.8rem;
+    background-color: transparent;
+    border: none;
+    border-left: 0.6rem solid var(--purple-300);
+    border-radius: 0.2rem;
+    cursor: pointer;
+    color: var(--white);
+    padding: 0.6rem 0.4rem 0.2rem 0.6rem
+}
+.header-box nav li button:hover{
+    background-color: var(--purple-200);
 }
 
 .notification-area {

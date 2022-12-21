@@ -3,16 +3,19 @@ import { DateTime } from "./DateTime";
 import { useContext } from "react";
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
 export function Taskbar(){
-    const openedFiles = useContext(OpenedFilesContext).openedFiles
+    const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext)
     return <header>
         <div className="header-box">
-            <div>Logo</div>
+            <div>Ernesto Borges - PC</div>
             <nav className="navbar">
                 <ul>
                     {openedFiles.map((file, i) => 
                         <li key={i}>
                             <img src={`/images/taskbar-icons/${file.name}.png`} alt="" />
-                            <p>{file.name}</p>
+                            <div className="filename-container">
+                                <div>{file.name}</div>
+                            </div>
+                            <button onClick={() => setOpenedFiles(prev => prev.filter(item => item.name !== file.name))}>X</button>
                         </li>
                     )}
                 </ul>
