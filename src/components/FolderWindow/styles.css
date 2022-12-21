@@ -80,9 +80,29 @@
 }
 
 .folder-window-box header .subtitle{
-    padding: 1rem;
-    background-color: var(--purple-300)
+    padding: 0.4rem 1rem;
+    background-color: var(--purple-300);
 }
+.folder-window-box .back-button{
+    width: 3.4rem;
+    height: 3.4rem;
+    border: 0.1rem solid transparent;
+    border-radius: 0.2rem;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.folder-window-box .back-button:hover{
+    border: 0.1rem solid transparent;
+    background-color: var(--purple-200);
+}
+.folder-window-box .back-button-img{
+    object-fit: cover;
+    width: 3.4rem;
+    height: 2rem;
+}
+
 .folder-window-box section{
     padding: 1rem;
     flex-grow: 1;
