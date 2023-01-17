@@ -24,6 +24,6 @@ export function Desktop(){
             <p>Contact</p>
         </div>
         <FolderWindow className={folderState === "closed" ? "hidden" : ""} folderState={folderState} setFolderState={setFolderState} />
-
+        
     </main>
 }
