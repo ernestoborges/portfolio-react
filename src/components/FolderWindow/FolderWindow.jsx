@@ -1,11 +1,12 @@
 import "./styles.css"
 import { foldersData } from "../../db/foldersData"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
 import Draggable from "react-draggable"
 
 export function FolderWindow({className, folderState, setFolderState}){
 
+    const windowsRef = useRef();
     const [folder, setFolder] = useState();
     const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext)
     // const setOpenedFiles = useContext(OpenedFilesContext).setOpenedFiles
@@ -13,6 +14,8 @@ export function FolderWindow({className, folderState, setFolderState}){
     useEffect(()=>{
         setFolder(foldersData.filter(item => item.name === folderState)[0])
     }, [folderState])
+
+    
 
     function handleFileClick(file){
         switch(file.type){
@@ -26,7 +29,14 @@ export function FolderWindow({className, folderState, setFolderState}){
                         {
                             name: file.name.split(".")[0],
                             minimized: false,
-                            index: prev.length > 0 ? prev[prev.length-1].index + 1 : 0 
+                            type: file.name.split(".")[1].toLowerCase(),
+                            index: prev.length > 0 ? prev[prev.length-1].index + 1 : 0,
+                            position: prev.length > 0 
+                                ? {
+                                    x: prev[prev.length-1].position.x + 40,
+                                    y: prev[prev.length-1].position.y + 60
+                                }
+                                : {x: 10, y: 60}
                         } 
                     ])
                 }
