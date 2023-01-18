@@ -20,6 +20,20 @@ export function NotepadApp({file, openedFiles, setOpenedFiles}){
         });
         setOpenedFiles(newList);
     }
+
+    function handleMinimizeButton(){
+        const newList = openedFiles.map( item => {
+            if(item.index === file.index){
+                const updatedItem = {
+                    ...item,
+                    minimized: true
+                };
+                return updatedItem;
+            }
+            return item;
+        });
+        setOpenedFiles(newList);
+    }
     return (
         <Draggable 
             bounds="parent" 
@@ -27,7 +41,7 @@ export function NotepadApp({file, openedFiles, setOpenedFiles}){
             onStop={handleWindowPositionState}
             position={file.position}
         >
-            <article id="drag-point" className={`folder-window`} ref={windowRef}>
+            <article id="drag-point" className={`folder-window ${file.minimized ? "minimized" : "maximized"}`} ref={windowRef}>
             <div className="folder-window-box">
                     <header>
                         <div id="drag-point" className="title">
@@ -39,7 +53,7 @@ export function NotepadApp({file, openedFiles, setOpenedFiles}){
                                 {file.name}
                             </h2>
                             <div className="button-container">
-                                <button>-</button>
+                                <button onClick={()=>handleMinimizeButton()}>-</button>
                                 <button onClick={()=>setOpenedFiles(prev => prev.filter(item => item.name !== file.name))}>X</button>
                             </div>
                         </div>

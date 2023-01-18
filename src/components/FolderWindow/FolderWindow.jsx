@@ -48,10 +48,22 @@ export function FolderWindow({file, folderState, setFolderState}){
                 break;
         }
     }
-
+    function handleMinimizeButton(){
+        const newList = openedFiles.map( item => {
+            if(item.index === file.index){
+                const updatedItem = {
+                    ...item,
+                    minimized: true
+                };
+                return updatedItem;
+            }
+            return item;
+        });
+        setOpenedFiles(newList);
+    }
     return (
         <Draggable bounds="parent" handle="#drag-point">
-            <article className={`folder-window`}>
+            <article className={`folder-window ${file.minimized ? "minimized" : "maximized"}`}>
                 <div className="folder-window-box">
                     <header>
                         <div id="drag-point" className="title">
@@ -63,7 +75,7 @@ export function FolderWindow({file, folderState, setFolderState}){
                                 {`/desktop/${folder?.name}`}
                             </h2>
                             <div className="button-container">
-                                <button>-</button>
+                                <button onClick={()=>handleMinimizeButton(file)}>-</button>
                                 <button onClick={()=>setOpenedFiles(prev => prev.filter(item => item.name !== file.name))}>X</button>
                             </div>
                         </div>
