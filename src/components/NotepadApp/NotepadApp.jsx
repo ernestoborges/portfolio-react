@@ -1,8 +1,6 @@
-import { useRef } from "react";
 import Draggable from "react-draggable";
 
 export function NotepadApp({file, openedFiles, setOpenedFiles}){
-    const windowRef = useRef()
 
     function handleWindowPositionState(event, dragElement){
         const newList = openedFiles.map( item => {
@@ -22,6 +20,7 @@ export function NotepadApp({file, openedFiles, setOpenedFiles}){
     }
 
     function handleMinimizeButton(){
+
         const newList = openedFiles.map( item => {
             if(item.index === file.index){
                 const updatedItem = {
@@ -41,7 +40,7 @@ export function NotepadApp({file, openedFiles, setOpenedFiles}){
             onStop={handleWindowPositionState}
             position={file.position}
         >
-            <article id="drag-point" className={`folder-window ${file.minimized ? "minimized" : "maximized"}`} ref={windowRef}>
+            <article id="drag-point" className={`folder-window ${file.minimized ? "hidden" : ""}`}>
             <div className="folder-window-box">
                     <header>
                         <div id="drag-point" className="title">

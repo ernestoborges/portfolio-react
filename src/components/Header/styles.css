@@ -100,34 +100,3 @@
     display: flex;
     justify-content: space-between;
 }
-
-/* animations to minimized and maximized windows */
-@keyframes fadeOut {
-    70%{
-        transform: translate(calc(50vw - 50%), 0) scale(0.01);
-    }
-    100% {
-        top: -50%;
-        transform: translate(calc(50vw - 50%), 0) scale(0.01);
-    }
-}
-@keyframes fadeIn {
-    100% {
-        top: -50%;
-        transform: translate(calc(50vw - 50%), 0) scale(0.01);
-    }
-}
-
-.minimized {
-    animation-name: fadeOut;
-    animation-direction: normal;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-}
-
-.maximized {
-    animation-name: fadeIn;
-    animation-direction: reverse;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-}

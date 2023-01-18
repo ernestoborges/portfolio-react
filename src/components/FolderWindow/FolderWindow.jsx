@@ -1,15 +1,13 @@
 import "./styles.css"
 import { foldersData } from "../../db/foldersData"
-import { useContext, useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
 import Draggable from "react-draggable"
 
 export function FolderWindow({file, folderState, setFolderState}){
 
-    const windowsRef = useRef();
     const [folder, setFolder] = useState();
     const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext)
-    // const setOpenedFiles = useContext(OpenedFilesContext).setOpenedFiles
 
     useEffect(()=>{
         setFolder(foldersData.filter(item => item.name === folderState)[0])
@@ -61,9 +59,30 @@ export function FolderWindow({file, folderState, setFolderState}){
         });
         setOpenedFiles(newList);
     }
+    function handleWindowPositionState(event, dragElement){
+        const newList = openedFiles.map( item => {
+            if(item.index === file.index){
+                const updatedItem = {
+                    ...item,
+                    position: {
+                        x: dragElement.x,
+                        y: dragElement.y
+                    }
+                };
+                return updatedItem;
+            }
+            return item;
+        });
+        setOpenedFiles(newList);
+    }
     return (
-        <Draggable bounds="parent" handle="#drag-point">
-            <article className={`folder-window ${file.minimized ? "minimized" : "maximized"}`}>
+        <Draggable 
+            bounds="parent" 
+            handle="#drag-point"
+            onStop={handleWindowPositionState}
+            position={file.position}
+        >
+            <article className={`folder-window ${file.minimized ? "hidden" : ""}`}>
                 <div className="folder-window-box">
                     <header>
                         <div id="drag-point" className="title">
@@ -76,7 +95,7 @@ export function FolderWindow({file, folderState, setFolderState}){
                             </h2>
                             <div className="button-container">
                                 <button onClick={()=>handleMinimizeButton(file)}>-</button>
-                                <button onClick={()=>setOpenedFiles(prev => prev.filter(item => item.name !== file.name))}>X</button>
+                                <button onClick={()=>setOpenedFiles(prev => prev.filter(item => item.index !== file.index))}>X</button>
                             </div>
                         </div>
                         <div className="subtitle">
