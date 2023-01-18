@@ -4,7 +4,7 @@ import { useContext, useEffect, useRef, useState } from "react"
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
 import Draggable from "react-draggable"
 
-export function FolderWindow({className, folderState, setFolderState}){
+export function FolderWindow({file, folderState, setFolderState}){
 
     const windowsRef = useRef();
     const [folder, setFolder] = useState();
@@ -14,8 +14,6 @@ export function FolderWindow({className, folderState, setFolderState}){
     useEffect(()=>{
         setFolder(foldersData.filter(item => item.name === folderState)[0])
     }, [folderState])
-
-    
 
     function handleFileClick(file){
         switch(file.type){
@@ -53,7 +51,7 @@ export function FolderWindow({className, folderState, setFolderState}){
 
     return (
         <Draggable bounds="parent" handle="#drag-point">
-            <article className={`folder-window ${className}`}>
+            <article className={`folder-window`}>
                 <div className="folder-window-box">
                     <header>
                         <div id="drag-point" className="title">
@@ -66,7 +64,7 @@ export function FolderWindow({className, folderState, setFolderState}){
                             </h2>
                             <div className="button-container">
                                 <button>-</button>
-                                <button onClick={()=>{setFolderState("closed")}}>X</button>
+                                <button onClick={()=>setOpenedFiles(prev => prev.filter(item => item.name !== file.name))}>X</button>
                             </div>
                         </div>
                         <div className="subtitle">

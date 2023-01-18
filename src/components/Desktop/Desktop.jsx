@@ -7,32 +7,54 @@ import OpenedFilesContext from "../../context/OpenedFilesProvider";
 export function Desktop(){
     const [folderState, setFolderState] = useState("closed")
     const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext)
+
+    function handleFileClick(name){
+        setFolderState(name)
+        if(openedFiles.filter(e => e.name === "Archives").length === 0){
+            setOpenedFiles((prev)=> [
+                ...prev,
+                {
+                    name: "Archives",
+                    minimized: false,
+                    type: "folder",
+                    index: prev.length > 0 ? prev[prev.length-1].index + 1 : 0,
+                    position: prev.length > 0 
+                        ? {
+                            x: prev[prev.length-1].position.x + 40,
+                            y: prev[prev.length-1].position.y + 60
+                        }
+                        : {x: 10, y: 60}
+                } 
+            ])
+        }
+    }
     return <main>
-        <div className="desktop-icon" onClick={()=>{setFolderState("about")}}>
+        <div className="desktop-icon" onClick={()=>{handleFileClick("about")}}>
             <div className="icon-container">
                 <img src="images/desktop-icons/folder.png" alt="" />
             </div>
             <p>About</p>
         </div>
-        <div className="desktop-icon" onClick={()=>{setFolderState("projects")}}>
+        <div className="desktop-icon" onClick={()=>{handleFileClick("projects")}}>
             <div className="icon-container">
                 <img src="images/desktop-icons/folder.png" alt="" />
             </div>
             <p>Projects</p>
         </div>
-        <div className="desktop-icon" onClick={()=>{setFolderState("contact")}}>
+        <div className="desktop-icon" onClick={()=>{handleFileClick("contact")}}>
             <div className="icon-container">
                 <img src="images/desktop-icons/folder.png" alt="" />
             </div>
             <p>Contact</p>
         </div>
-        <FolderWindow className={folderState === "closed" ? "hidden" : ""} folderState={folderState} setFolderState={setFolderState} />
         {/* <AboultTxt className={openedFiles?.about. === "closed" ? "hidden" : ""}></AboultTxt>  */}
         {
             openedFiles.map((file, i) => {
                 switch(file.type){
                     case "txt":
                         return <NotepadApp key={i} file={file} openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} />
+                    case "folder":
+                        return <FolderWindow key={i} file={file} folderState={folderState} openedFiles={openedFiles} setFolderState={setFolderState} />
                     {/* case "table":
                         return <TableApp /> */}
                     default:
