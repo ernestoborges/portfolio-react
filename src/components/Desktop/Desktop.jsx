@@ -52,13 +52,11 @@ export function Desktop(){
             openedFiles.map((file, i) => {
                 switch(file.type){
                     case "txt":
-                        return <NotepadApp key={i} file={file} openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} />
+                        return <NotepadApp key={i} order={i} file={file} openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} />
                     case "folder":
-                        return <FolderWindow key={i} file={file} folderState={folderState} openedFiles={openedFiles} setFolderState={setFolderState} />
-                    {/* case "table":
-                        return <TableApp /> */}
+                        return <FolderWindow key={i} order={i} file={file} folderState={folderState} openedFiles={openedFiles} setFolderState={setFolderState} />
                     default:
-                        break;
+                        return <></>;
                 }
             })
         }

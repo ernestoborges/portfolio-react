@@ -1,0 +1,49 @@
+.folder-window-box section .paths-section {
+    padding: 1rem;
+    display: flex;
+    width: 24rem;
+    flex-direction: column;
+    gap: 0.4rem;
+    background-color: var(--purple-200);
+    list-style: none;
+    overflow: hidden;
+    border-right: 0.4rem solid var(--purple-300);
+}
+.folder-window-box section .paths-section ul{
+    margin-top: 0.4rem;
+    list-style: none;
+    margin-left: 1rem;
+    display: flex;
+    width: 24rem;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.folder-window-box section .paths-section li {
+    white-space: nowrap;
+}
+.folder-window-box section .paths-section li > div {
+    cursor: pointer;
+    padding: 0.5rem 0.4rem 0.4rem 0.6rem;
+    border-radius: 0.1rem;
+}
+.folder-window-box section .paths-section li > div:hover {
+    cursor: pointer;
+    background-color: rgba(220, 210, 197, 0.4);
+}
+
+.folder-window-box section .paths-section .path-arrow-container {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-flex;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items: center;
+    top: -0.3rem;
+    position: relative;
+}
+
+.folder-window-box section .paths-section .path-arrow {
+    width: 60%;
+    height: 60%;
+    
+}

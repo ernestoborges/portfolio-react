@@ -3,11 +3,28 @@ import { foldersData } from "../../db/foldersData"
 import { useContext, useEffect, useState } from "react"
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
 import Draggable from "react-draggable"
+import { FolderPathIcon } from "../Icons/FolderPath/FolderPath";
+import { FolderWindowPaths } from "../FolderWindowPaths/FolderWindowPaths";
 
 export function FolderWindow({file, folderState, setFolderState}){
 
     const [folder, setFolder] = useState();
-    const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext)
+    const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext);
+    const [selectedPath, setSelectedPath] = useState();
+
+    const paths = [
+        {name: "About"},
+        {
+            name: "Projects",
+            children: [
+                {name: "Pokedex"},
+                {name: "REST Countries API"},
+                {name: "DnD5e Monster Encounters"},
+                {name: "Frontend Mentor"},
+            ]
+        },
+        {name: "Contact"}
+    ]
 
     useEffect(()=>{
         setFolder(foldersData.filter(item => item.name === folderState)[0])
@@ -25,8 +42,9 @@ export function FolderWindow({file, folderState, setFolderState}){
                         {
                             name: file.name.split(".")[0],
                             minimized: false,
+                            content: file.content ? file.content : ["empty"],
                             type: file.name.split(".")[1].toLowerCase(),
-                            index: prev.length > 0 ? prev[prev.length-1].index + 1 : 0,
+                            index: prev.length > 0 ? prev.sort((a,b) => a.index > b.index ? -1 : 1)[0].index + 1 : 0,
                             position: prev.length > 0 
                                 ? {
                                     x: prev[prev.length-1].position.x + 40,
@@ -111,7 +129,14 @@ export function FolderWindow({file, folderState, setFolderState}){
                         </div>
                     </header>
                     <section>
-                        <ul>
+                        <ul className="paths-section">
+                            {
+                                paths.map((path, index) => (
+                                    <FolderWindowPaths key={index} path={path} selectedPath={selectedPath} setSelectedPath={setSelectedPath} />
+                                ))
+                            }
+                        </ul>   
+                        <ul className="files-section">
                             {
                                 folder?.files.map((file, index) => (
                                     <li  

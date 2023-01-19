@@ -1,6 +1,6 @@
 import Draggable from "react-draggable";
-
-export function NotepadApp({file, openedFiles, setOpenedFiles}){
+import "./styles.css"
+export function NotepadApp({order, file, openedFiles, setOpenedFiles}){
 
     function handleWindowPositionState(event, dragElement){
         const newList = openedFiles.map( item => {
@@ -19,8 +19,8 @@ export function NotepadApp({file, openedFiles, setOpenedFiles}){
         setOpenedFiles(newList);
     }
 
-    function handleMinimizeButton(){
-
+    function handleMinimizeButton(e){
+        e.stopPropagation();
         const newList = openedFiles.map( item => {
             if(item.index === file.index){
                 const updatedItem = {
@@ -40,35 +40,52 @@ export function NotepadApp({file, openedFiles, setOpenedFiles}){
             onStop={handleWindowPositionState}
             position={file.position}
         >
-            <article id="drag-point" className={`folder-window ${file.minimized ? "hidden" : ""}`}>
-            <div className="folder-window-box">
-                    <header>
-                        <div id="drag-point" className="title">
-                            <h2>
-                                <div className="title-icon">
-                                <div></div>
-                                <div></div>
+            <article 
+                className={`notepad-window ${file.minimized ? "hidden" : ""}`}
+                onClick={()=>{
+                    const newOrder = [...openedFiles]
+                    const item = newOrder.splice(order, 1)[0];
+                    newOrder.splice(newOrder.length, 0, item);
+                    setOpenedFiles(newOrder);
+                }}
+            >
+                <div className="notepad-window-box">
+                        <header>
+                            <div id="drag-point" className="title">
+                                <h2>
+                                    <div className="title-icon">
+                                        <div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    {`${file.name} - Notepad`}
+                                </h2>
+                                <div className="button-container">
+                                    <button onClick={(e)=>handleMinimizeButton(e)}>-</button>
+                                    <button onClick={(e)=>{
+                                        e.stopPropagation();
+                                        setOpenedFiles(prev => prev.filter(item => item.name !== file.name))
+                                        }}>X</button>
                                 </div>
-                                {file.name}
-                            </h2>
-                            <div className="button-container">
-                                <button onClick={()=>handleMinimizeButton()}>-</button>
-                                <button onClick={()=>setOpenedFiles(prev => prev.filter(item => item.name !== file.name))}>X</button>
                             </div>
-                        </div>
-                        <div className="subtitle">
-                            <button
-                                className="option-button"
-                            >
-                                File
-                            </button>
-                        </div>
-                    </header>
-                    <section>
-                        text
-                    </section>
-                    <footer>{`utf-8`}</footer>
-                </div>
+                            <div className="subtitle">
+                                <button className="option-button">File</button>
+                                <button className="option-button">Edit</button>
+                                <button className="option-button">View</button>
+                            </div>
+                        </header>
+                        <section>
+                            {file.content.map(paragraph => <><p>{paragraph}</p><br/></> )}
+                        </section>
+                        <footer>
+                            <div>
+                                <span>{`Wrd ${file.content.join(" ").length + file.content.length - 1}`}</span>
+                                <span>utf-8</span>
+                            </div>  
+                        </footer>
+                    </div>
             </article>
         </Draggable>
     )

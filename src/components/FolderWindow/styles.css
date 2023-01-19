@@ -106,21 +106,20 @@
     height: 2rem;
 }
 
-.folder-window-box section{
-    padding: 1rem;
+.folder-window-box section {
     flex-grow: 1;
     background-color: var(--salmon);
-}
-.folder-window-box footer{
-    padding: 1rem;
-    background-color: var(--purple-300)
+    display: flex;
 }
 
-.folder-window-box section ul {
+.folder-window-box section .files-section {
+    padding: 1rem;
     display: flex;
     list-style: none;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
-.folder-window-box section li {
+.folder-window-box section .files-section li {
     max-width: 18rem;
     min-width: 14rem;
     display: flex;
@@ -134,12 +133,16 @@
     line-height: 1.4;
     text-align: center;
 }
-.folder-window-box section li:hover {
+.folder-window-box section .files-section li:hover {
     cursor: pointer;
     background-color: var(--purple-100);
 }
-.folder-window-box section li img {
+.folder-window-box section .files-section li img {
     width: 7.2rem;
     object-fit: contain;
 }
 
+.folder-window-box footer{
+    padding: 1rem;
+    background-color: var(--purple-300)
+}

@@ -6,12 +6,22 @@ export const foldersData = [
             {
                 icon: 'txt',
                 name: "About-PT.txt",
-                type: "file"
+                type: "file",
+                content: [
+                    "Sobre mim,",
+                    "Olá, me chamo Ernesto e moro no interior do Rio de Janeiro. Em 2022 despertei interesse em desenvolvimento web e foi então que descobri uma paixão pela área. Desde aí, não parei de estudar e querer aprender mais.",
+                    "Atualmente estou em um processo de mudança de carreira, estou estudando para me capacitar e ter um bom currículo para conseguir minha primeira oportunidade profissional."
+                ]
             },
             {
                 icon: 'txt',
                 name: "About-EN.txt",
-                type: "file"
+                type: "file",
+                content: [
+                    "About me,",
+                    "Hi! My name is Ernesto. I'm from Brazil and in 2022 I started to read about web development and that's how I discovered what I love to do. Since then, I haven't stopped studying and wanting to learn more.",
+                    "Now, I'm in a career change process. I'm studying to develop my skills and have experience to get my first professional opportunity."
+                ]
             },
             {
                 icon: 'table',
