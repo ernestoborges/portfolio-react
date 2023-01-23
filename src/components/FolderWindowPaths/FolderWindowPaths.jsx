@@ -8,12 +8,12 @@ export function FolderWindowPaths({path, selectedPath, parent, setSelectedPath, 
 
     useEffect(()=>{
         setFullPath(parent ? parent+"/"+path.name : path.name);
-    },[])
+    },[parent, path.name])
     useEffect(()=>{
         if(path.name === "Desktop"){
             setIsOpen(true);
         }
-    },[])
+    },[path.name])
 
     return (
         <li>

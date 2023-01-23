@@ -122,6 +122,7 @@ export function FolderWindow({file, folderState, setFolderState}){
                             <button
                                 className="back-button"
                                 disabled={!folder?.name.includes("/")}
+                                style={!folder?.name.includes("/") ? {opacity: "0.6"} : {}}
                                 onClick={
                                     ()=> setFolderState(folder?.name.split("/").filter((item, i, arr) => arr.length !== i+1).join("/"))
                                 }

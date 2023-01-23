@@ -3,6 +3,7 @@ import { FolderWindow } from "../FolderWindow/FolderWindow"
 import { NotepadApp } from "../NotepadApp/NotepadApp";
 import { useState, useContext } from "react"
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
+import { TableApp } from "../TableApp/TableApp";
 
 export function Desktop(){
     const [folderState, setFolderState] = useState("closed")
@@ -51,10 +52,12 @@ export function Desktop(){
         {
             openedFiles.map((file, i) => {
                 switch(file.type){
-                    case "txt":
-                        return <NotepadApp key={i} order={i} file={file} openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} />
                     case "folder":
                         return <FolderWindow key={i} order={i} file={file} folderState={folderState} openedFiles={openedFiles} setFolderState={setFolderState} />
+                    case "txt":
+                        return <NotepadApp key={i} order={i} file={file} openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} />
+                    case "table":
+                        return <TableApp key={i} order={i} file={file} openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} />
                     default:
                         return <></>;
                 }
