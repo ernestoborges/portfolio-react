@@ -1,15 +1,27 @@
 import "./styles.css"
 import { FolderPathIcon } from "../Icons/FolderPath/FolderPath"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export function FolderWindowPaths({path, selectedPath, setSelectedPath}){
+export function FolderWindowPaths({path, selectedPath, parent, setSelectedPath, setFolderState}){
     const [isOpen, setIsOpen] = useState(false);
+    const [fullPath, setFullPath] = useState("");
+
+    useEffect(()=>{
+        setFullPath(parent ? parent+"/"+path.name : path.name);
+    },[])
+    useEffect(()=>{
+        if(path.name === "Desktop"){
+            setIsOpen(true);
+        }
+    },[])
+
     return (
         <li>
             <div 
                 onClick={(e) => {
                     e.stopPropagation();
                     setSelectedPath(path.name);
+                    setFolderState(fullPath);
                 }}
                 style={selectedPath === path.name ? {backgroundColor: "rgba(220, 210, 197, 0.6)"} : {}}
             >
@@ -34,8 +46,8 @@ export function FolderWindowPaths({path, selectedPath, setSelectedPath}){
             {path.children && isOpen ? 
                 <ul>
                     {
-                        path.children.map((path, index) => (
-                            <FolderWindowPaths key={index} path={path} selectedPath={selectedPath} setSelectedPath={setSelectedPath}/>
+                        path.children.map((child, index) => (
+                            <FolderWindowPaths key={index} path={child} parent={fullPath} selectedPath={selectedPath} setSelectedPath={setSelectedPath} setFolderState={setFolderState}/>
                         ))
                     }
                 </ul>

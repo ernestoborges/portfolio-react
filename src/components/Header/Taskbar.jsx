@@ -1,9 +1,13 @@
 import "./styles.css";
 import { DateTime } from "./DateTime";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
 export function Taskbar(){
-    const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext)
+    const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext);
+    const [newOpenedFiles, setNewOpenedFiles] = useState([]);
+    useEffect(()=>{
+        setNewOpenedFiles([...openedFiles]);
+    }, [openedFiles])
 
     function handleMinimizationToggle(file){
         const newList = openedFiles.map( item => {
@@ -27,7 +31,7 @@ export function Taskbar(){
             <div>Ernesto Borges - PC</div>
             <nav className="navbar">
                 <ul>
-                    {openedFiles.map((file, i) => 
+                    {newOpenedFiles.sort((a, b) => a.index - b.index).map((file, i) => 
                         <li key={i} onClick={() => handleMinimizationToggle(file)}>
                             <img src={`/images/taskbar-icons/${file.name}.png`} alt="" />
                             <div className="filename-container">

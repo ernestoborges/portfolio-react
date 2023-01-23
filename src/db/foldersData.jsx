@@ -1,7 +1,28 @@
 export const foldersData = [
+    // desktop folder 
+    {
+        name: "Desktop",
+        files: [
+            {
+                icon: 'folder',
+                name: "About",
+                type: "folder",
+            },
+            {
+                icon: 'folder',
+                name: "Projects",
+                type: "folder",
+            },
+            {
+                icon: 'folder',
+                name: "Contact",
+                type: "folder",
+            },
+        ]
+    },
     // about folder
     {
-        name: "about",
+        name: "Desktop/About",
         files: [
             {
                 icon: 'txt',
@@ -37,7 +58,7 @@ export const foldersData = [
     },
     // projects folder
     {
-        name: "projects/Pokedex",
+        name: "Desktop/Projects/Pokedex",
         files: [
             {
                 icon: 'browser',
@@ -59,7 +80,7 @@ export const foldersData = [
         ]
     },
     {
-        name: "projects/REST Countries API",
+        name: "Desktop/Projects/REST Countries API",
         files: [
             {
                 icon: 'browser',
@@ -81,7 +102,7 @@ export const foldersData = [
         ]
     },
     {
-        name: "projects/DnD5e Monster Encounters",
+        name: "Desktop/Projects/DnD5e Monster Encounters",
         files: [
             {
                 icon: 'browser',
@@ -103,7 +124,7 @@ export const foldersData = [
         ]
     },
     {
-        name: "projects/Frontend Mentor",
+        name: "Desktop/Projects/Frontend Mentor",
         files: [
             {
                 icon: 'browser',
@@ -113,7 +134,7 @@ export const foldersData = [
         ]
     },
     {
-        name: "projects",
+        name: "Desktop/Projects",
         files: [
             {
                 icon: 'folder',
@@ -139,7 +160,7 @@ export const foldersData = [
     },
     // contact folder
     {
-        name: "contact",
+        name: "Desktop/Contact",
         files: [
             {
                 icon: 'github',

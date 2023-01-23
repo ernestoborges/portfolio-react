@@ -3,7 +3,6 @@ import { foldersData } from "../../db/foldersData"
 import { useContext, useEffect, useState } from "react"
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
 import Draggable from "react-draggable"
-import { FolderPathIcon } from "../Icons/FolderPath/FolderPath";
 import { FolderWindowPaths } from "../FolderWindowPaths/FolderWindowPaths";
 
 export function FolderWindow({file, folderState, setFolderState}){
@@ -13,17 +12,22 @@ export function FolderWindow({file, folderState, setFolderState}){
     const [selectedPath, setSelectedPath] = useState();
 
     const paths = [
-        {name: "About"},
         {
-            name: "Projects",
+            name: "Desktop",
             children: [
-                {name: "Pokedex"},
-                {name: "REST Countries API"},
-                {name: "DnD5e Monster Encounters"},
-                {name: "Frontend Mentor"},
+                {name: "About"},
+                {
+                    name: "Projects",
+                    children: [
+                        {name: "Pokedex"},
+                        {name: "REST Countries API"},
+                        {name: "DnD5e Monster Encounters"},
+                        {name: "Frontend Mentor"},
+                    ]
+                },
+                {name: "Contact"}
             ]
-        },
-        {name: "Contact"}
+        }
     ]
 
     useEffect(()=>{
@@ -54,11 +58,9 @@ export function FolderWindow({file, folderState, setFolderState}){
                         } 
                     ])
                 }
-                console.log("file")
                 break;
             case "link":
                 window.open(file.link)
-                console.log("link")
                 break;
             default:
                 break;
@@ -109,7 +111,7 @@ export function FolderWindow({file, folderState, setFolderState}){
                                 <div></div>
                                 <div></div>
                                 </div>
-                                {`/desktop/${folder?.name}`}
+                                {`/${folder?.name}`}
                             </h2>
                             <div className="button-container">
                                 <button onClick={()=>handleMinimizeButton(file)}>-</button>
@@ -132,7 +134,7 @@ export function FolderWindow({file, folderState, setFolderState}){
                         <ul className="paths-section">
                             {
                                 paths.map((path, index) => (
-                                    <FolderWindowPaths key={index} path={path} selectedPath={selectedPath} setSelectedPath={setSelectedPath} />
+                                    <FolderWindowPaths key={index} path={path} selectedPath={selectedPath} setSelectedPath={setSelectedPath} setFolderState={setFolderState} />
                                 ))
                             }
                         </ul>   

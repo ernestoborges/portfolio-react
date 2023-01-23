@@ -29,19 +29,19 @@ export function Desktop(){
         }
     }
     return <main>
-        <div className="desktop-icon" onClick={()=>{handleFileClick("about")}}>
+        <div className="desktop-icon" onClick={()=>{handleFileClick("Desktop/About")}}>
             <div className="icon-container">
                 <img src="images/desktop-icons/folder.png" alt="" />
             </div>
             <p>About</p>
         </div>
-        <div className="desktop-icon" onClick={()=>{handleFileClick("projects")}}>
+        <div className="desktop-icon" onClick={()=>{handleFileClick("Desktop/Projects")}}>
             <div className="icon-container">
                 <img src="images/desktop-icons/folder.png" alt="" />
             </div>
             <p>Projects</p>
         </div>
-        <div className="desktop-icon" onClick={()=>{handleFileClick("contact")}}>
+        <div className="desktop-icon" onClick={()=>{handleFileClick("Desktop/Contact")}}>
             <div className="icon-container">
                 <img src="images/desktop-icons/folder.png" alt="" />
             </div>
