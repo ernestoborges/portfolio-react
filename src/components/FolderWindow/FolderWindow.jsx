@@ -5,7 +5,7 @@ import OpenedFilesContext from "../../context/OpenedFilesProvider";
 import Draggable from "react-draggable"
 import { FolderWindowPaths } from "../FolderWindowPaths/FolderWindowPaths";
 
-export function FolderWindow({file, folderState, setFolderState}){
+export function FolderWindow({order, file, folderState, setFolderState}){
 
     const [folder, setFolder] = useState();
     const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext);
@@ -66,7 +66,8 @@ export function FolderWindow({file, folderState, setFolderState}){
                 break;
         }
     }
-    function handleMinimizeButton(){
+    function handleMinimizeButton(e){
+        e.stopPropagation();
         const newList = openedFiles.map( item => {
             if(item.index === file.index){
                 const updatedItem = {
@@ -102,7 +103,15 @@ export function FolderWindow({file, folderState, setFolderState}){
             onStop={handleWindowPositionState}
             position={file.position}
         >
-            <article className={`folder-window ${file.minimized ? "hidden" : ""}`}>
+            <article 
+                className={`folder-window ${file.minimized ? "hidden" : ""}`}
+                onClick={()=>{
+                    const newOrder = [...openedFiles]
+                    const item = newOrder.splice(order, 1)[0];
+                    newOrder.splice(newOrder.length, 0, item);
+                    setOpenedFiles(newOrder);
+                }}    
+            >
                 <div className="folder-window-box">
                     <header>
                         <div id="drag-point" className="title">
@@ -114,8 +123,8 @@ export function FolderWindow({file, folderState, setFolderState}){
                                 {`/${folder?.name}`}
                             </h2>
                             <div className="button-container">
-                                <button onClick={()=>handleMinimizeButton(file)}>-</button>
-                                <button onClick={()=>setOpenedFiles(prev => prev.filter(item => item.index !== file.index))}>X</button>
+                                <button onClick={(e)=>handleMinimizeButton(e)}>-</button>
+                                <button onClick={(e)=>{e.stopPropagation();setOpenedFiles(prev => prev.filter(item => item.index !== file.index))}}>X</button>
                             </div>
                         </div>
                         <div className="subtitle">
@@ -144,7 +153,7 @@ export function FolderWindow({file, folderState, setFolderState}){
                                 folder?.files.map((file, index) => (
                                     <li  
                                         key={index}
-                                        onClick = { () => handleFileClick(file) }
+                                        onClick = { (e) => {e.stopPropagation();handleFileClick(file)}}
                                     >
                                         <div className="icon-container">
                                             <img src={`images/desktop-icons/${file.icon}.png`} alt="" />

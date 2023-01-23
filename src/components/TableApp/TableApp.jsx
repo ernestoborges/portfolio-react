@@ -3,8 +3,8 @@ import "./styles.css"
 import {useState} from "react";
 export function TableApp({order, file, openedFiles, setOpenedFiles}){
 
-    const [extraRows, setExtraRows] = useState(11);
-    const [extraColumns, setExtraColumns] = useState(4);
+    const [extraRows, setExtraRows] = useState(3);
+    const [extraColumns, setExtraColumns] = useState(1);
     const [crescentItemOrder, setCrescentItemOrder] = useState(1);
     const [crescentNameOrder, setCrescentNameOrder] = useState(-1);
     const [crescentRatingOrder, setCrescentRatingOrder] = useState(-1);
@@ -165,7 +165,7 @@ export function TableApp({order, file, openedFiles, setOpenedFiles}){
                         </header>
                         <section>
                             <ul className="skills-table">
-                                <li className="skill-item" style={{gridTemplateColumns:`3rem 22rem 32rem 22rem repeat(${extraColumns},10rem)`}}>
+                                <li className="skill-item" style={{gridTemplateColumns:`3rem 18rem 28rem 18rem repeat(${extraColumns},10rem)`}}>
                                     <div className="column-n row-n"><span> </span></div>
                                     {
                                         [...Array(3 + extraColumns)].map((skill, index) => (
@@ -173,7 +173,7 @@ export function TableApp({order, file, openedFiles, setOpenedFiles}){
                                         ))
                                     }
                                 </li>
-                                <li className="skill-item" style={{gridTemplateColumns:`3rem 22rem 32rem 22rem repeat(${extraColumns},10rem)`}}>
+                                <li className="skill-item" style={{gridTemplateColumns:`3rem 18rem 28rem 18rem repeat(${extraColumns},10rem)`}}>
                                     <div className="row-n"><span>1</span></div>
                                     <div className="header icon" onClick={()=>{
                                         setSkills(
@@ -219,7 +219,7 @@ export function TableApp({order, file, openedFiles, setOpenedFiles}){
                                 </li>
                                 {
                                     skills.concat([...Array(extraRows)]).map((skill, index) => (
-                                        <li key={index} className="skill-item" style={{gridTemplateColumns:`3rem 22rem 32rem 22rem repeat(${extraColumns},10rem)`}}>
+                                        <li key={index} className="skill-item" style={{gridTemplateColumns:`3rem 18rem 28rem 18rem repeat(${extraColumns},10rem)`}}>
                                             <div className="row-n"><span>{index + 2}</span></div>
                                             <div className={`${index < skills.length ? "element" : "empty"} icon`}>{skill?.icon ? <img src={`images/skills-icons/${skill.icon}`} alt=""></img> : <div></div> }</div>
                                             <div className={`${index < skills.length ? "element" : "empty"} name`}>{skill?.name ? <a href={skill.link} target="_blank">{skill.name}</a> : ""}</div>

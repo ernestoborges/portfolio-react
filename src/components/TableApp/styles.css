@@ -1,7 +1,7 @@
 .table-window {
     position: absolute;
-    width: 90rem;
-    height: 60rem;
+    width: 78rem;
+    height: 56rem;
     background-color: transparent;   
     display: flex;
     align-items: center;
@@ -16,14 +16,14 @@
 .table-window-box {
     color: var(--white);
     border: 0.4rem solid var(--purple-400);
-    max-height: 60rem;
+    max-height: 56rem;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 .table-window-box header .title{
-    padding: 1rem;
+    padding: 0.8rem;
     background-color:  var(--purple-400);
     display: flex;
     justify-content: space-between;
@@ -70,12 +70,12 @@
 
 .table-window-box header .title .button-container{
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
 .table-window-box header .title .button-container button{
     font-family: "DOA-8Bit-Mage";
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     background-color: transparent;
     color: var(--white);
     border: 0.2rem solid var(--purple-200);

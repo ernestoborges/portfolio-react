@@ -1,7 +1,7 @@
 .notepad-window {
     position: absolute;
-    width: 70rem;
-    height: 60rem;
+    width: 50rem;
+    height: 50rem;
     background-color: transparent;   
     display: flex;
     align-items: center;
@@ -16,7 +16,7 @@
 .notepad-window-box {
     color: var(--white);
     border: 0.4rem solid var(--purple-400);
-    max-height: 60rem;
+    max-height: 50rem;
     width: 100%;
     height: 100%;
     display: flex;
@@ -24,7 +24,7 @@
 }
 
 .notepad-window-box header .title{
-    padding: 1rem;
+    padding: 0.8rem;
     background-color:  var(--purple-400);
     display: flex;
     justify-content: space-between;
@@ -45,7 +45,7 @@
     width: 2.8rem;
     height: 2.4rem;
 }
-.notepad-window-box header .title-icon > div{
+.notepad-window-box header .title-icon > div {
     width: 2.2rem;
     height: 2.4rem;
     background-color: var(--white);
@@ -65,12 +65,12 @@
 
 .notepad-window-box header .title .button-container{
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
-.notepad-window-box header .title .button-container button{
+.notepad-window-box header .title .button-container button {
     font-family: "DOA-8Bit-Mage";
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     background-color: transparent;
     color: var(--white);
     border: 0.2rem solid var(--purple-200);
@@ -80,23 +80,23 @@
     justify-content: center;
     align-items: center;
 }
-.notepad-window-box header .title .button-container button:hover{
+.notepad-window-box header .title .button-container button:hover {
     cursor: pointer;
     background-color: var(--purple-200);
 }
-.notepad-window-box header .title .button-container button:nth-child(2):hover{
+.notepad-window-box header .title .button-container button:nth-child(2):hover {
     border: 0.2rem solid var(--red);
     background-color: var(--red);
 }
 
-.notepad-window-box header .subtitle{
+.notepad-window-box header .subtitle {
     padding: 0.4rem 1rem;
     background-color: var(--purple-300);
     display: flex;
     gap: 2rem;
 }
 
-.notepad-window-box header .subtitle button{
+.notepad-window-box header .subtitle button {
     font-family: "DOA-8Bit-Mage";
     font-weight: normal;
     letter-spacing: 0.2rem;
@@ -115,7 +115,7 @@
 }
 
 .notepad-window-box section{
-    padding: 2rem 2.4rem 1rem;
+    padding: 1rem 2rem 1rem;
     flex-grow: 1;
     background-color: var(--white);
     background-color: #725d75;
