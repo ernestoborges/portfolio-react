@@ -61,7 +61,7 @@ export function FolderWindow({order, file, folderState, setFolderState}){
                 }
                 break;
             case "link":
-                window.open(file.link)
+                window.open(file.link);
                 break;
             default:
                 break;

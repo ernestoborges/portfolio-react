@@ -105,7 +105,12 @@ export const foldersData = [
                 icon: 'img',
                 name: "Preview.png",
                 type: "file",
-                ref: "REST Countries API"
+                ref: "REST Countries API",
+                content: [
+                    "It's a Frontend Mentor chalange",
+                    "Here I started researching more about React and learned many new things.",
+                    "The most interesting tool I learned in this case was React Navigation"
+                ]
             },
         ]
     },
@@ -128,7 +133,10 @@ export const foldersData = [
                 icon: 'img',
                 name: "Preview.png",
                 type: "file",
-                ref: "DnD5e Monster Encounters"
+                ref: "DnD5e Monster Encounters",
+                content: [
+                    "This is a difficulty calculator for combat encounters against monsters in the RPG game Dungeons and Dragons 5th Edition.",
+                ]
             },
         ]
     },
@@ -136,9 +144,28 @@ export const foldersData = [
         name: "Desktop/Projects/Frontend Mentor",
         files: [
             {
-                icon: 'browser',
-                name: "Index.html",
-                type: "link"
+                icon: '08',
+                name: "Expenses chart component",
+                type: "link",
+                link: "https://ernestoborges.github.io/frontendMentor-08/"
+            },
+            {
+                icon: '09',
+                name: "Time tracking dashboard",
+                type: "link",
+                link: "https://ernestoborges.github.io/frontendMentor-09/"
+            },
+            {
+                icon: '10',
+                name: "Social media dashboard",
+                type: "link",
+                link: "https://ernestoborges.github.io/frontendMentor-10/"
+            },
+            {
+                icon: '11',
+                name: "Interactive card details form",
+                type: "link",
+                link: "https://ernestoborges.github.io/frontendMentor-11/"
             },
         ]
     },
