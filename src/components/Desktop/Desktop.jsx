@@ -1,9 +1,10 @@
 import "./styles.css"
-import { FolderWindow } from "../FolderWindow/FolderWindow"
-import { NotepadApp } from "../NotepadApp/NotepadApp";
 import { useState, useContext } from "react"
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
+import { FolderWindow } from "../FolderWindow/FolderWindow"
+import { NotepadApp } from "../NotepadApp/NotepadApp";
 import { TableApp } from "../TableApp/TableApp";
+import { ImageApp } from "../ImageAPP/ImageApp";
 
 export function Desktop(){
     const [folderState, setFolderState] = useState("closed")
@@ -58,6 +59,8 @@ export function Desktop(){
                         return <NotepadApp key={i} order={i} file={file} openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} />
                     case "table":
                         return <TableApp key={i} order={i} file={file} openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} />
+                    case "png":
+                        return <ImageApp key={i} order={i} file={file} openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} />
                     default:
                         return <></>;
                 }

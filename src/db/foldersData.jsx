@@ -52,7 +52,8 @@ export const foldersData = [
             {
                 icon: 'pdf',
                 name: "Curriculum.pdf",
-                type: "link"
+                type: "link",
+                link: "images/curriculum.pdf"
             },
         ]
     },
@@ -73,9 +74,15 @@ export const foldersData = [
                 link: "https://github.com/ernestoborges/Pokedex"
             },
             {
-                icon: 'dnd5e.png',
+                icon: 'img',
                 name: "Preview.png",
-                type: "file"
+                type: "file",
+                ref: "Pokedex",
+                content: [
+                    "My first React project",
+                    "The idea was to come up with what a real pokedex would look like.",
+                    "I plan to redo it using React correctly in the future"
+                ]
             },
         ]
     },
@@ -95,9 +102,10 @@ export const foldersData = [
                 link: "https://github.com/ernestoborges/frontendMentor-12"
             },
             {
-                icon: 'dnd5e.png',
+                icon: 'img',
                 name: "Preview.png",
-                type: "file"
+                type: "file",
+                ref: "REST Countries API"
             },
         ]
     },
@@ -117,9 +125,10 @@ export const foldersData = [
                 link: "https://github.com/ernestoborges/dnd5e-encounter-calculator"
             },
             {
-                icon: 'dnd5e.png',
+                icon: 'img',
                 name: "Preview.png",
-                type: "file"
+                type: "file",
+                ref: "DnD5e Monster Encounters"
             },
         ]
     },

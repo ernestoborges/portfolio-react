@@ -141,6 +141,13 @@
     cursor: pointer;
     background-color: var(--purple-100);
 }
+.folder-window-box section .files-section .icon-container {
+    min-height: 7.8rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .folder-window-box section .files-section li img {
     width: 7.2rem;
     object-fit: contain;

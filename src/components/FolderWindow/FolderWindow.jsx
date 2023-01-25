@@ -47,6 +47,7 @@ export function FolderWindow({order, file, folderState, setFolderState}){
                             name: file.name.split(".")[0],
                             minimized: false,
                             content: file.content ? file.content : ["empty"],
+                            ref: file.ref ? file.ref : "",
                             type: file.name.split(".")[1].toLowerCase(),
                             index: prev.length > 0 ? prev.sort((a,b) => a.index > b.index ? -1 : 1)[0].index + 1 : 0,
                             position: prev.length > 0 

@@ -6,7 +6,7 @@ export function TableApp({order, file, openedFiles, setOpenedFiles}){
     const [extraRows, setExtraRows] = useState(3);
     const [extraColumns, setExtraColumns] = useState(1);
     const [crescentItemOrder, setCrescentItemOrder] = useState(1);
-    const [crescentNameOrder, setCrescentNameOrder] = useState(-1);
+    const [crescentNameOrder, setCrescentNameOrder] = useState(1);
     const [crescentRatingOrder, setCrescentRatingOrder] = useState(-1);
     const [skills, setSkills] = useState(
         [
@@ -222,7 +222,7 @@ export function TableApp({order, file, openedFiles, setOpenedFiles}){
                                         <li key={index} className="skill-item" style={{gridTemplateColumns:`3rem 18rem 28rem 18rem repeat(${extraColumns},10rem)`}}>
                                             <div className="row-n"><span>{index + 2}</span></div>
                                             <div className={`${index < skills.length ? "element" : "empty"} icon`}>{skill?.icon ? <img src={`images/skills-icons/${skill.icon}`} alt=""></img> : <div></div> }</div>
-                                            <div className={`${index < skills.length ? "element" : "empty"} name`}>{skill?.name ? <a href={skill.link} target="_blank">{skill.name}</a> : ""}</div>
+                                            <div className={`${index < skills.length ? "element" : "empty"} name`}>{skill?.name ? <a href={skill.link} target="_blank" rel="noreferrer">{skill.name}</a> : ""}</div>
                                             <div className={`${index < skills.length ? "element" : "empty"} rating`}>{skill?.rating ? skill.rating+"/5" : ""}</div>
                                             {
                                                 [...Array(extraColumns)].map((col, index)=>(
