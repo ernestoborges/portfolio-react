@@ -27,10 +27,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: grab;
+    cursor: var(--grab);
 }
 .image-window-box header .title:active{
-    cursor: grabbing;
+    cursor: var(--grabbing);
 }
 .image-window-box header .title h2 {
     display: flex;
@@ -79,7 +79,7 @@
     align-items: center;
 }
 .image-window-box header .title .button-container button:hover {
-    cursor: pointer;
+    cursor: var(--pointer);
     background-color: var(--purple-200);
 }
 .image-window-box header .title .button-container button:nth-child(2):hover {
@@ -108,7 +108,7 @@
 
 .image-window-box header .subtitle button:hover{
     background-color: var(--purple-200);
-    cursor: pointer;
+    cursor: var(--pointer);
     text-decoration: underline;
 }
 

@@ -27,7 +27,7 @@ main {
     width: 10rem;
 }
 .desktop-icon:hover{
-    cursor: pointer;
+    cursor: var(--pointer);
     background-color: rgb(210, 192, 170, 0.5);
     border: 0.2rem solid var(--white);
 }

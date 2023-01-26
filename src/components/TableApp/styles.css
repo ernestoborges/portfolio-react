@@ -28,10 +28,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: grab;
+    cursor: var(--grab);
 }
 .table-window-box header .title:active{
-    cursor: grabbing;
+    cursor: var(--grabbing);
 }
 .table-window-box header .title h2 {
     display: flex;
@@ -86,7 +86,7 @@
     align-items: center;
 }
 .table-window-box header .title .button-container button:hover{
-    cursor: pointer;
+    cursor: var(--pointer);
     background-color: var(--purple-200);
 }
 .table-window-box header .title .button-container button:nth-child(2):hover{
@@ -115,7 +115,7 @@
 
 .table-window-box header .subtitle button:hover{
     background-color: var(--purple-200);
-    cursor: pointer;
+    cursor: var(--pointer);
     text-decoration: underline;
 }
 
@@ -191,7 +191,7 @@
 }
 .header {
     background-color: #b9b7b3;
-    cursor: pointer;
+    cursor: var(--pointer);
 }
 .header:hover {
     background-color: var(--purple-200);

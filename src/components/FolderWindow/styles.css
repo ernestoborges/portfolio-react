@@ -31,10 +31,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: grab;
+    cursor: var(--grab);
 }
 .folder-window-box header .title:active{
-    cursor: grabbing;
+    cursor: var(--grabbing);
 }
 .folder-window-box header .title h2 {
     display: flex;
@@ -77,7 +77,7 @@
     align-items: center;
 }
 .folder-window-box header .title .button-container button:hover{
-    cursor: pointer;
+    cursor: var(--pointer);
     background-color: var(--purple-200);
 }
 .folder-window-box header .title .button-container button:nth-child(2):hover{
@@ -95,7 +95,7 @@
     border: 0.1rem solid transparent;
     border-radius: 0.2rem;
     background-color: transparent;
-    cursor: pointer;
+    cursor: var(--pointer);
     display: flex;
     align-items: center;
 }
@@ -138,7 +138,7 @@
     text-align: center;
 }
 .folder-window-box section .files-section li:hover {
-    cursor: pointer;
+    cursor: var(--pointer);
     background-color: var(--purple-100);
 }
 .folder-window-box section .files-section .icon-container {
