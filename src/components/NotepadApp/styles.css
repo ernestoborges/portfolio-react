@@ -29,10 +29,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: grab;
+    cursor: var(--grab);
 }
 .notepad-window-box header .title:active{
-    cursor: grabbing;
+    cursor: var(--grabbing);
 }
 .notepad-window-box header .title h2 {
     display: flex;
@@ -81,7 +81,7 @@
     align-items: center;
 }
 .notepad-window-box header .title .button-container button:hover {
-    cursor: pointer;
+    cursor: var(--pointer);
     background-color: var(--purple-200);
 }
 .notepad-window-box header .title .button-container button:nth-child(2):hover {
@@ -110,7 +110,7 @@
 
 .notepad-window-box header .subtitle button:hover{
     background-color: var(--purple-200);
-    cursor: pointer;
+    cursor: var(--pointer);
     text-decoration: underline;
 }
 
@@ -164,7 +164,7 @@
     text-align: center;
 }
 .notepad-window-box section li:hover {
-    cursor: pointer;
+    cursor: var(--pointer);
     background-color: var(--purple-100);
 }
 .notepad-window-box section li img {

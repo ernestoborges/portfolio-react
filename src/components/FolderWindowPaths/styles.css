@@ -22,12 +22,12 @@
     white-space: nowrap;
 }
 .folder-window-box section .paths-section li > div {
-    cursor: pointer;
+    cursor: var(--pointer);
     padding: 0.5rem 0.4rem 0.4rem 0.6rem;
     border-radius: 0.1rem;
 }
 .folder-window-box section .paths-section li > div:hover {
-    cursor: pointer;
+    cursor: var(--pointer);
     background-color: rgba(220, 210, 197, 0.4);
 }
 
