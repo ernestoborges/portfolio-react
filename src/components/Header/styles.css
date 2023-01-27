@@ -14,6 +14,28 @@
     padding: 0 1rem;
 }
 
+.header-box .user-icon {
+    display: flex;
+    gap: 1rem;
+    border: 0.1rem solid transparent;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+}
+
+.header-box .user-icon:hover {
+    cursor: var(--pointer);
+    border: 0.1rem solid var(--white);
+    background-color: var(--purple-200);
+}
+
+.header-box .user-icon img {
+    width: 2.4rem;
+}
+
+.header-box .user-icon span {
+    margin-top: 0.3rem;
+}
+
 .header-box > * {
     display: flex;
     align-items: center;

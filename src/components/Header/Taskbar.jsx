@@ -2,8 +2,10 @@ import "./styles.css";
 import { DateTime } from "./DateTime";
 import { useContext, useEffect, useState } from "react";
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
+import UserPopupContext from "../../context/UserPopupProvider";
 export function Taskbar(){
     const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext);
+    const setIsPopupOn = useContext(UserPopupContext).setIsPopupOn;
     const [newOpenedFiles, setNewOpenedFiles] = useState([]);
     useEffect(()=>{
         setNewOpenedFiles([...openedFiles]);
@@ -28,7 +30,10 @@ export function Taskbar(){
     }
     return <header>
         <div className="header-box">
-            <div>Ernesto Borges - PC</div>
+            <div className="user-icon" onClick={()=>setIsPopupOn(true)}>
+                <img src="images/taskbar-icons/user.svg" alt=""/>
+                <span>Ernesto Borges - PC</span>
+            </div>
             <nav className="navbar">
                 <ul>
                     {newOpenedFiles.sort((a, b) => a.index - b.index).map((file, i) => 

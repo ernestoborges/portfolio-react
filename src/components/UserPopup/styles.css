@@ -1,0 +1,120 @@
+.user-popup-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 14rem;
+    justify-content: center;
+    background-color: rgba(87, 75, 102, 0.6);
+}
+
+.user-popup-box {
+    background-color: var(--purple-300);
+    border: 0.4rem solid var(--purple-400);
+    border-radius: 0.4rem;
+    padding: 1rem 1rem;
+    color: var(--white);
+}
+.user-popup-box  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.user-popup-box  header h2 {
+    margin-top: 0.3rem;
+}
+
+.user-popup-box header button {
+    font-family: "DOA-8Bit-Mage";
+    font-size: 1.6rem;
+    background-color: transparent;
+    color: var(--white);
+    border: 0.2rem solid var(--purple-200);
+    border-radius: 0.4rem;
+    display: flex;
+    padding: 0.8rem 0.8rem 0.4rem 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-popup-box header button:hover {
+    cursor: var(--pointer);
+    border: 0.2rem solid var(--red);
+    background-color: var(--red);
+}
+
+.user-popup-box section {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.4rem;
+}
+
+.profile-pic-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--purple-200);
+    border: 0.4rem solid var(--purple-400);
+    border-radius: 50%;
+    width: 13rem;
+    height: 13rem;
+    padding: 1rem 0 0 1rem;
+    overflow: hidden;
+}
+
+.profile-pic-container img {
+    width: 10rem;
+}
+
+.user-popup-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-popup-box ul > li  {
+    display: flex;
+    gap: 1rem;
+}
+
+.user-popup-box ul > li > span:nth-child(2) {
+    opacity: 0.7
+}
+
+.user-popup-box footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 1rem;
+}
+.user-popup-box footer button{
+    font-family: "DOA-8Bit-Mage";
+    font-size: 1.6rem;
+    background-color:  var(--red);
+    color: var(--white);
+    border: 0.2rem solid var(--red);
+    border-radius: 0.4rem;
+    display: flex;
+    padding: 0.8rem 0.8rem 0.4rem 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.user-popup-box footer button:hover{
+    border: 0.2rem solid var(--white);
+    background-color: var(--red);
+    cursor: var(--pointer);
+}
