@@ -126,6 +126,9 @@
     line-height: 2.4rem;
     text-indent: 1.6rem;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
 }
 .notepad-window-box footer{
     padding: 1rem 1rem 0.8rem;

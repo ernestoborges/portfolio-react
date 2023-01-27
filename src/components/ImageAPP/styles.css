@@ -112,7 +112,7 @@
     text-decoration: underline;
 }
 
-.image-window-box section{
+.image-window-box section {
     padding: 1rem;
     background-color: var(--purple-200);
     color: var(--black);
@@ -136,6 +136,9 @@
     word-spacing: 1rem;
     line-height: 1.8rem;
     color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
 }
 
 .image-window-box footer{

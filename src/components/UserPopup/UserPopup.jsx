@@ -1,5 +1,7 @@
 import "./styles.css"
+import { useNavigate } from "react-router-dom"
 export function UserPopup({setIsPopupOn}){
+    const navigate = useNavigate();
     return (
         <div className="user-popup-container">
             <article className="user-popup-box">
@@ -20,7 +22,7 @@ export function UserPopup({setIsPopupOn}){
                     </ul>
                 </section>
                 <footer>
-                    <button>RESTART PC</button>
+                    <button onClick={()=>navigate("/")}>RESTART PC</button>
                 </footer>
             </article>
         </div>

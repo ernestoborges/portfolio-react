@@ -78,7 +78,7 @@ export function ImageApp({order, file, openedFiles, setOpenedFiles}){
                             </div>
                             <div className="desc-container">
                                 {file.content.map((paragraph, i)=>(
-                                    <><p>{paragraph}</p><br/></>
+                                    <p key={i}>{paragraph}</p>
                                 ))}
                             </div>
                         </section>

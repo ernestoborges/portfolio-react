@@ -77,7 +77,7 @@ export function NotepadApp({order, file, openedFiles, setOpenedFiles}){
                             </div>
                         </header>
                         <section>
-                            {file.content.map(paragraph => <><p>{paragraph}</p><br/></> )}
+                            {file.content.map((paragraph,i) => <p key={i}>{paragraph}</p> )}
                         </section>
                         <footer>
                             <div>
