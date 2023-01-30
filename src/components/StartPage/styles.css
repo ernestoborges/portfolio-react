@@ -1,0 +1,110 @@
+.start-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: var(--purple-200);
+    color: var(--white);
+}
+.start-page header .time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.start-page header .date {
+    display: none;
+}
+
+.login-window {
+    background-color: var(--purple-300);
+    border: 0.1rem solid var(--white);
+    border-radius: 0.4rem;
+    padding: 0;
+    width: 32rem;
+    height: 26rem;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.login-window> h2 {
+    background-color: var(--purple-400);
+    width: 100%;
+    padding: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-list {
+    list-style: none;
+    width: 100%;
+    padding: 0 2rem;
+
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+    border: 0.2rem solid transparent;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    /* background-color: rgba(87, 75, 102, 0.6);
+    background-color: var(--purple-200); */
+
+}
+
+.user:hover {
+    cursor: var(--pointer);
+    /* background-color: var(--purple-100); */
+    border: 0.2rem solid var(--white);
+    color: var(--white);
+}
+
+.user-selected {
+    background-color: var(--purple-200);
+}
+
+.user img {
+    width: 6rem;
+    height: 6rem;
+    transform: scaleX(-1);
+    object-fit: contain;
+    border: 0.3rem solid var(--purple-400);
+    border-radius: 50%;
+    padding: 0.4rem;
+    background-color: var(--white);
+}
+
+
+.login-window button {
+    width: 27.8rem;
+    padding: 1.2rem 1rem 1rem;
+    background-color: var(--purple-400);
+    color: var(--white);
+    border: 0.1rem solid var(--white);
+    border-radius: 0.2rem;
+    font-family: "DOA-8Bit-Mage";
+    letter-spacing: 0.2rem;
+    margin-bottom: 2rem;
+}
+
+
+.login-window button:enabled:hover {
+    background-color: var(--purple-200);
+    cursor: var(--pointer);
+}
+
+.login-window button:disabled {
+    opacity: 0.5;
+}
