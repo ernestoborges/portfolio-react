@@ -23,6 +23,7 @@ export function Taskbar(){
             return item;
         });
         setOpenedFiles(newList);
+        
     }
     function handleCloseButton(event, file){
         event.stopPropagation();

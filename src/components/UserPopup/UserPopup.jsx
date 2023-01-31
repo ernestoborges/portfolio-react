@@ -22,7 +22,12 @@ export function UserPopup({setIsPopupOn}){
                     </ul>
                 </section>
                 <footer>
-                    <button onClick={()=>navigate("/")}>RESTART PC</button>
+                    <button onClick={()=>{
+                        setIsPopupOn(false);
+                        navigate("/")
+                        }
+                        }
+                    >RESTART PC</button>
                 </footer>
             </article>
         </div>
