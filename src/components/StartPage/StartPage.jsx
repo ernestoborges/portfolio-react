@@ -22,7 +22,7 @@ export function StartPage(){
             {
                 isLoading 
                 ? 
-                    <section className="loading-window">
+                    <section>
                         <h2>Welcome to my PC</h2>
                         <div className="loading-window">
                             <div className="loading-bar">

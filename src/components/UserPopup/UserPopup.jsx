@@ -24,7 +24,7 @@ export function UserPopup({setIsPopupOn}){
                 <footer>
                     <button onClick={()=>{
                         setIsPopupOn(false);
-                        navigate("/")
+                        navigate("/shuttingdown")
                         }
                         }
                     >RESTART PC</button>

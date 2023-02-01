@@ -5,10 +5,21 @@ import { FolderWindow } from "../FolderWindow/FolderWindow"
 import { NotepadApp } from "../NotepadApp/NotepadApp";
 import { TableApp } from "../TableApp/TableApp";
 import { ImageApp } from "../ImageAPP/ImageApp";
+import PcConfigsContext from "../../context/PcConfigsProvider";
+import { useEffect } from "react";
 
 export function Desktop(){
     const [folderState, setFolderState] = useState("closed")
     const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext)
+    const volume = useContext(PcConfigsContext).volume;
+
+
+    let startup = new Audio("/audios/so-startup2.mp3");
+
+    useEffect(()=>{
+        startup.volume = volume / 3;
+        startup.play();
+    },[])
 
     function handleFileClick(name){
         setFolderState(name)

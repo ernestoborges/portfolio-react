@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { StartPage } from './components/StartPage/StartPage';
 import PcConfigsContext from './context/PcConfigsProvider';
 import { useEffect } from 'react';
+import { ShutDownPage } from './components/ShutDownPage/ShutdownPage';
 
 function App() {
 
@@ -17,14 +18,23 @@ function App() {
   let clickDown = new Audio("/audios/clickdown.mp3");
   let clickUp = new Audio("/audios/clickup.mp3");
 
-  useEffect(()=>{
-    clickDown.volume = volume / 3;
-    clickUp.volume = volume / 3;
-
-  }, [volume])
+  function handleSystemClick(type){
+    switch(type){
+      case "up":
+        clickUp.volume = volume / 3;
+        clickUp.play();
+        break;
+      case "down":
+        clickDown.volume = volume / 3;
+        clickDown.play();
+        break;
+      default:
+        break;
+    }
+  }
 
   return (
-    <div className="App" onMouseDown={()=>clickDown.play()} onMouseUp={()=>clickUp.play()}>
+    <div className="App" onMouseDown={()=>handleSystemClick("down")} onMouseUp={()=>handleSystemClick("up")}>
       <Router>
         <Routes>
           <Route 
@@ -44,6 +54,12 @@ function App() {
                 <Desktop />
                 {isPopupOn && <UserPopup setIsPopupOn={setIsPopupOn} />}
               </div>
+            }
+          />
+          <Route 
+            path="/shuttingdown"
+            element={
+              <ShutDownPage />
             }
           />
         </Routes>
