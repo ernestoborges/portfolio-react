@@ -3,9 +3,11 @@ import { DateTime } from "./DateTime";
 import { useContext, useEffect, useState } from "react";
 import OpenedFilesContext from "../../context/OpenedFilesProvider";
 import UserPopupContext from "../../context/UserPopupProvider";
+import PcConfigsContext from "../../context/PcConfigsProvider";
 export function Taskbar(){
     const {openedFiles, setOpenedFiles} = useContext(OpenedFilesContext);
     const setIsPopupOn = useContext(UserPopupContext).setIsPopupOn;
+    const {volume, setVolume} = useContext(PcConfigsContext);
     const [newOpenedFiles, setNewOpenedFiles] = useState([]);
     useEffect(()=>{
         setNewOpenedFiles([...openedFiles]);
@@ -49,8 +51,8 @@ export function Taskbar(){
                 </ul>
             </nav>
             <div className="notification-area">
-                <div>
-                    <img src="/images/taskbar-icons/volume.png" alt="" />
+                <div onClick={()=>setVolume(volume === 3 ? 0 : volume + 1)}>
+                    <img src={`/images/taskbar-icons/volume${volume}.png`} alt="" />
                 </div>
                 <div>
                     EN

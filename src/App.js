@@ -6,15 +6,22 @@ import UserPopupContext from './context/UserPopupProvider';
 import { UserPopup } from './components/UserPopup/UserPopup';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { StartPage } from './components/StartPage/StartPage';
+import PcConfigsContext from './context/PcConfigsProvider';
+import { useEffect } from 'react';
 
 function App() {
 
   const { isPopupOn, setIsPopupOn } = useContext(UserPopupContext);
+  const volume = useContext(PcConfigsContext).volume;
 
   let clickDown = new Audio("/audios/clickdown.mp3");
   let clickUp = new Audio("/audios/clickup.mp3");
 
+  useEffect(()=>{
+    clickDown.volume = volume / 3;
+    clickUp.volume = volume / 3;
 
+  }, [volume])
 
   return (
     <div className="App" onMouseDown={()=>clickDown.play()} onMouseUp={()=>clickUp.play()}>
