@@ -81,3 +81,60 @@ body {
 .hidden {
     display: none !important;
 }
+
+
+
+
+/* scrolbar */
+
+::-webkit-scrollbar {
+    background-color: var(--purple-200);
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--purple-200);
+    border: 0.2rem solid var(--purple-400);
+
+}
+  
+::-webkit-scrollbar-track {
+    background-color: var(--salmon);
+    border: 0.2rem solid var(--purple-400);
+    
+}
+::-webkit-scrollbar-corner {
+    background-color: var(--purple-400);
+
+}
+
+::-webkit-scrollbar-button {
+    background-repeat: no-repeat;
+    object-fit: cover;
+    display: flex;
+    margin: auto;
+    
+}
+
+::-webkit-scrollbar-button:vertical:decrement
+{
+    background-image: url("../public/images/scrollbar/arrow-u.svg");  
+}
+
+/* Down */
+::-webkit-scrollbar-button:vertical:increment
+{
+    background-image: url("../public/images/scrollbar/arrow-d.svg");
+}
+
+/* Left */
+::-webkit-scrollbar-button:horizontal:decrement
+{
+    background-image: url("../public/images/scrollbar/arrow-l.svg");  
+}
+
+/* Right */
+::-webkit-scrollbar-button:horizontal:increment
+{
+    background-image: url("../public/images/scrollbar/arrow-r.svg");  
+}
