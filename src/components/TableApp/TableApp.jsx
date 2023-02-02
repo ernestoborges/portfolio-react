@@ -54,18 +54,26 @@ export function TableApp({order, file, openedFiles, setOpenedFiles}){
             },
             {
                 index: 7,
+                icon: "postgre.png",
+                name: "PostgreSQL",
+                link: "https://www.postgresql.org/docs/",
+                rating: 2, 
+            },
+            {
+                index: 8,
                 icon: "git.png",
                 name: "Git",
                 link: "https://git-scm.com/doc",
                 rating: 2, 
             },
             {
-                index: 8,
+                index: 9,
                 icon: "github.png",
                 name: "GitHub",
                 link: "https://docs.github.com/pt",
                 rating: 2, 
             },
+            
         ]
     );
 
