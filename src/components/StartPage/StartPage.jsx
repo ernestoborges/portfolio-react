@@ -1,8 +1,9 @@
 import "./styles.css"
 import {useNavigate} from "react-router-dom"
 import { DateTime } from "../Header/DateTime";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
+import PcConfigsContext from "../../context/PcConfigsProvider";
 
 export function StartPage(){
     const navigate = useNavigate();
@@ -10,6 +11,15 @@ export function StartPage(){
     const [isLoading, setIsLoading] = useState(false);
     const loadingBricks = [0,0,0,0,0,0,0,0,0,0];
     
+    const volume = useContext(PcConfigsContext).volume;
+    
+    let loginAudio = new Audio("/audios/login.mp3");
+
+    useEffect(()=>{
+        loginAudio.volume = volume / 3;
+        loginAudio.play();
+    },[])
+
     function loading(){
         setTimeout(()=>navigate("/pc"), 4000)
     }

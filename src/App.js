@@ -39,8 +39,7 @@ function App() {
       <Router>
         <Routes>
           <Route 
-            path="/" 
-            exact
+            path="/login" 
             element={
               <div className="start-page">
                 <StartPage />
@@ -64,7 +63,8 @@ function App() {
             }
           />
           <Route 
-            path="/system"
+            path="/"
+            exact
             element={
               <CommandWindow />
             }

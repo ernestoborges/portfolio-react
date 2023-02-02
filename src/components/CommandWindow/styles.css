@@ -10,7 +10,7 @@
 
 .system-window section {
     max-height: 30rem;
-    overflow: hidden;
+    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -20,4 +20,26 @@
 
 .gray-text {
     opacity:0.4;
+}
+
+.system-window footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.system-window footer button{
+    align-self: center;
+    background-color: transparent;
+    color: var(--white);
+    font-family: "DOA-8Bit-Mage";
+    font-size: 1.6rem;
+    padding: 1rem;
+    border: 0.3rem solid var(--white);
+    border-left: 0;
+    border-right: 0;
+}
+.system-window footer button:hover{
+    cursor:pointer;
+    background-color: var(--white);
+    color: var(--black);
 }

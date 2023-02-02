@@ -14,7 +14,7 @@ export function Desktop(){
     const volume = useContext(PcConfigsContext).volume;
 
 
-    let startup = new Audio("/audios/so-startup2.mp3");
+    let startup = new Audio("/audios/so-startup.mp3");
 
     useEffect(()=>{
         startup.volume = volume / 3;
