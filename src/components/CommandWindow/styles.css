@@ -1,0 +1,23 @@
+.system-window {
+    background-color: var(--black);
+    color: var(--white);
+    height: 100%;
+    width: 100%;
+    padding: 4rem;
+    line-height: 1.6rem;
+    font-size: 1.6rem;
+}
+
+.system-window section {
+    max-height: 30rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    margin-top: 2rem;
+}
+
+.gray-text {
+    opacity:0.4;
+}

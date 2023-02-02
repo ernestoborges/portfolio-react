@@ -9,6 +9,7 @@ import { StartPage } from './components/StartPage/StartPage';
 import PcConfigsContext from './context/PcConfigsProvider';
 import { useEffect } from 'react';
 import { ShutDownPage } from './components/ShutDownPage/ShutdownPage';
+import { CommandWindow } from './components/CommandWindow/CommandWindow';
 
 function App() {
 
@@ -60,6 +61,12 @@ function App() {
             path="/shuttingdown"
             element={
               <ShutDownPage />
+            }
+          />
+          <Route 
+            path="/system"
+            element={
+              <CommandWindow />
             }
           />
         </Routes>
