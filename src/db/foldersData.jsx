@@ -40,8 +40,8 @@ export const foldersData = [
                 type: "file",
                 content: [
                     "About me,",
-                    "Hi! My name is Ernesto. I'm from Brazil and in 2022 I started to read about web development and that's how I discovered what I love to do. Since then, I haven't stopped studying and wanting to learn more.",
-                    "Now, I'm in a career change process. I'm studying to develop my skills and have experience to get my first professional opportunity."
+                    "Hello, my name is Ernesto and I am from Brazil. In 2022, I began reading about web development and discovered my passion. I have been continuously studying and seeking to improve my knowledge since then.",
+                    "Currently, I am undergoing a career change and am investing in my professional development. My goal is to gain the skills and experience needed to secure my first professional opportunity."
                 ]
             },
             {
@@ -54,6 +54,12 @@ export const foldersData = [
                 name: "Curriculum.pdf",
                 type: "link",
                 link: "images/curriculum.pdf"
+            },
+            {
+                icon: 'pdf',
+                name: "Curriculum-simplified.pdf",
+                type: "link",
+                link: "images/curriculum-simplified.pdf"
             },
         ]
     },
