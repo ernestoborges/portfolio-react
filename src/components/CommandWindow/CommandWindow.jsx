@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles.css"
-
-
 
 export function CommandWindow(){
 
@@ -37,8 +36,6 @@ export function CommandWindow(){
         ""
     ]
 
-
-
     const arr = [
         ".welcome_message --en",
         " ",
@@ -47,12 +44,15 @@ export function CommandWindow(){
         "It's a web page that provides the user with an experience of using an old generic operating system.",
         "To fully enjoy the experience, it is recommended to use a device with a larger screen.",
         "Feel free to browse through the files and folders.",
-        "The page may play some sound effects."
+        "The page may play some sound effects.",
     ];
 
     const [startText, setStartText] = useState([]);
     const [typedText, setTypedText] = useState('');
     const [paragraph, setParagraph] = useState([]);
+    const [messageEnded, setMessageEnded] = useState(false);
+
+    const navigate = useNavigate();
 
     function message(){
         let i = 1;
@@ -71,10 +71,12 @@ export function CommandWindow(){
             }
         };
         const phrase = () => {
+            k++;
             if(k < arr.length){
-                setTimeout(type, 10);
-                k++;
                 i = 0;
+                setTimeout(type, 10);
+            } else {
+                setMessageEnded(true)
             }
         }
         phrase();
@@ -113,6 +115,13 @@ export function CommandWindow(){
             ))
         }
         <p>{`> ${typedText}`}</p>
+        {
+            messageEnded
+            && <footer>
+                    <p>Click 'Enter' button to proceed</p>
+                    <button onClick={()=>navigate("/login")}>Enter</button>
+                </footer>
+        }
       </section>
     </article>
   );
