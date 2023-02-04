@@ -81,7 +81,8 @@ export function NotepadApp({order, file, openedFiles, setOpenedFiles}){
                         </section>
                         <footer>
                             <div>
-                                <span>{`Wrd ${file.content.join(" ").length + file.content.length - 1}`}</span>
+                                <span>{`Cha ${file.content.join(" ").length + file.content.length - 1}`}</span>
+                                <span>{`Wrd ${file.content.join(" ").split(" ").length}`}</span>
                                 <span>utf-8</span>
                             </div>  
                         </footer>

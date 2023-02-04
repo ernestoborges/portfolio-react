@@ -246,7 +246,7 @@ export function TableApp({order, file, openedFiles, setOpenedFiles}){
                             <div>
                                 <span>READY</span>
                                 <span>NUM</span>
-                                <span>{`ROWS ${9 + extraRows}`}</span>
+                                <span>{`ROWS ${10 + extraRows}`}</span>
                                 <span>{`COLUMNS ${3 + extraColumns}`}</span>
                             </div>  
                         </footer>
