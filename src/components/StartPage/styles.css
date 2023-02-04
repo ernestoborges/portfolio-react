@@ -9,6 +9,15 @@
     background-color: var(--purple-200);
     color: var(--white);
 }
+
+.start-page .welcome-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+}
+
 .start-page header .time {
     display: flex;
     flex-direction: column;
@@ -59,14 +68,11 @@
     border: 0.2rem solid transparent;
     border-radius: 0.4rem;
     padding: 1rem;
-    /* background-color: rgba(87, 75, 102, 0.6);
-    background-color: var(--purple-200); */
 
 }
 
 .user:hover {
     cursor: var(--pointer);
-    /* background-color: var(--purple-100); */
     border: 0.2rem solid var(--white);
     color: var(--white);
 }

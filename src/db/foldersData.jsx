@@ -219,7 +219,8 @@ export const foldersData = [
             {
                 icon: 'mail',
                 name: "E-mail",
-                type: "clip",
+                type: "link",
+                link: "mailto: ernestoborges1995@gmail.com"
             },
         ]
     }

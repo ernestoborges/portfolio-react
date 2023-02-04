@@ -22,6 +22,12 @@ export function UserPopup({setIsPopupOn}){
                     </ul>
                 </section>
                 <footer>
+                    <button className="logout-btn" onClick={()=>{
+                        setIsPopupOn(false);
+                        navigate("/login")
+                        }
+                    }
+                    >LOGOUT</button>
                     <button onClick={()=>{
                         setIsPopupOn(false);
                         navigate("/shuttingdown")

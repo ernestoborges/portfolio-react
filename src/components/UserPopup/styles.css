@@ -97,11 +97,12 @@
 
 .user-popup-box footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    padding: 2rem 0 1rem;
+    padding: 2rem 0 1rem;   
 }
-.user-popup-box footer button{
+
+.user-popup-box footer button {
     font-family: "DOA-8Bit-Mage";
     font-size: 1.6rem;
     background-color:  var(--red);
@@ -112,9 +113,21 @@
     padding: 0.8rem 0.8rem 0.4rem 1rem;
     justify-content: center;
     align-items: center;
+    width: 12.2rem;
+    cursor: var(--pointer);
+
 }
 .user-popup-box footer button:hover{
     border: 0.2rem solid var(--white);
     background-color: var(--red);
-    cursor: var(--pointer);
+}
+
+.logout-btn {
+    background-color:  var(--purple-400) !important;
+    border: 0.2rem solid var(--purple-200) !important;
+}
+
+.logout-btn:hover{
+    background-color:  var(--purple-400) !important;
+    border: 0.2rem solid var(--white) !important;
 }
