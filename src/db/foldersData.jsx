@@ -30,7 +30,7 @@ export const foldersData = [
                 type: "file",
                 content: [
                     "Sobre mim,",
-                    "Olá, me chamo Ernesto e moro no interior do Rio de Janeiro. Em 2022 despertei interesse em desenvolvimento web e foi então que descobri uma paixão pela área. Desde aí, não parei de estudar e querer aprender mais.",
+                    "Olá, me chamo Ernesto e moro no interior do Rio de Janeiro. Em 2022 despertei interesse em desenvolvimento web e foi então que descobri uma paixão pela área. Desde então, não parei de estudar e querer aprender mais.",
                     "Atualmente estou em um processo de mudança de carreira, estou estudando para me capacitar e ter um bom currículo para conseguir minha primeira oportunidade profissional."
                 ]
             },
